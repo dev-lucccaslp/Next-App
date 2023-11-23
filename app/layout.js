@@ -1,5 +1,7 @@
-import { Navigation } from './components/Navigation'
+import { Inter } from 'next/font/google'
 import './globals.css'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -7,25 +9,9 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  const navLinks =[
-    {
-      name: 'Home',
-      href:'/',
-    },
-    {
-      name: 'Dashboard',
-      href:'/dashboard',
-    },    {
-      name: 'Blog',
-      href:'/blog',
-    },
-  ]
   return (
     <html lang="en">
-      <body>
-         <Navigation navLinks={navLinks}/>
-        {children}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }
